@@ -1,0 +1,9 @@
+{
+  "admin": {
+    "algorithm": "pbkdf2_sha256",
+    "iterations": 200000,
+    "salt": "1e35c7024cf01a7c79beab36d96d2b93",
+    "hash": "dd1105ecc8d785aba407d53cbd1c3b86fbf08bdd7d28c2239d3e1c17856b6a9c",
+    "role": "admin"
+  }
+}
