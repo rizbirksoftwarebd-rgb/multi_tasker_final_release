@@ -2,4 +2,5 @@ streamlit
 Pillow==11.1.0
 SQLAlchemy
 psycopg[binary]
+python-dotenv==1.0.0
 pytest
