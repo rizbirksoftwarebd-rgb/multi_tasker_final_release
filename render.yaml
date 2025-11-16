@@ -2,8 +2,15 @@ services:
   - type: web
     name: multi-tasker-streamlit
     runtime: python
-    envVars:
-      PYTHON_VERSION: 3.11
     plan: free
-    buildCommand: python -m pip install --upgrade pip && pip install -r requirements.txt --timeout 120 --retries 5
-    startCommand: streamlit run main.py --server.port $PORT --server.address 0.0.0.0
+
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11
+
+    buildCommand: |
+      pip install --upgrade pip
+      pip install -r requirements.txt --timeout 120 --retries 5
+
+    startCommand: |
+      streamlit run main.py --server.port $PORT --server.address 0.0.0.0
