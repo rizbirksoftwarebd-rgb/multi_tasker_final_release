@@ -1,4 +1,3 @@
-\
 import streamlit as st
 from db import list_users, add_or_update_user, deactivate_user, list_pages, set_permission, get_permission
 import re, binascii, secrets, hashlib, json
@@ -75,10 +74,10 @@ class AdminDashboard:
             users_list = list_users()
             st.write("Toggle per-user permissions for each page:")
             for p in pages:
-                st.markdown(f\"**{p['title']}** ({p['page']})\")
+                st.markdown(f"**{p['title']}** ({p['page']})")
                 for u in users_list:
                     current = get_permission(u['username'], p['page'])
-                    chk = st.checkbox(f\"{u['username']}\", value=bool(current), key=f\"perm-{p['page']}-{u['username']}\")
+                    chk = st.checkbox(f"{u['username']}", value=bool(current), key=f"perm-{p['page']}-{u['username']}")
                     if chk != bool(current):
                         set_permission(u['username'], p['page'], chk)
                         st.experimental_rerun()
@@ -86,5 +85,5 @@ class AdminDashboard:
             st.write("Permissions updated.")
         with tabs[2]:
             st.subheader("System")
-            st.write(f\"Database URL (detected): {engine.url}\")
-            st.write(\"Environment-based auto-init and default admin insertion is enabled.\")
+            st.write(f"Database URL (detected): {engine.url}")
+            st.write("Environment-based auto-init and default admin insertion is enabled.")

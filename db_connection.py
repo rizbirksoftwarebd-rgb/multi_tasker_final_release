@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 def get_engine(prefer_manual=True):
-    manual = os.getenv('MANUAL_DATABASE_URL','').strip()
+    manual = os.getenv('MANUAL_DATABASE_URL','postgresql://multi_tasker_db_user:NLiPqqTZ5OsIhNt0BMNAGa89otWKycxO@dpg-d4bmveripnbc73feiong-a.singapore-postgres.render.com/multi_tasker_db').strip()
     auto = os.getenv('DATABASE_URL','').strip() or os.getenv('RENDER_DATABASE_URL','').strip() or os.getenv('RENDER_EXTERNAL_POSTGRES_URL','').strip()
 
     if prefer_manual and manual:
