@@ -128,7 +128,7 @@ class App:
                     PageClass().run(self)
 
 def main():
-    params = st.experimental_get_query_params()
+    params = st.query_params
     path_info = os.environ.get('PATH_INFO','') or os.environ.get('REQUEST_URI','')
     app = App()
     if (params.get('page', [''])[0] == 'setup') or path_info.endswith('/setup'):
