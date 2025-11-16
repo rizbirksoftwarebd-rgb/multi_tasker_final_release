@@ -20,7 +20,7 @@ class Auth:
     def authenticate(self, username, password):
         user = get_user(username)
         if not user:
-            return False, "Invalid credentials."
+            return False, "Invalid users."
         if int(user.get("active",1)) == 0:
             return False, "Account is deactivated."
         ok = verify_password(user, password)
