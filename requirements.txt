@@ -1,4 +1,6 @@
-streamlit==1.26.0
+streamlit
+pandas
+pillow
 SQLAlchemy
 psycopg[binary]==3.1.18
 python-dotenv
