@@ -1,7 +1,5 @@
 streamlit
-pandas
-pillow
+Pillow==11.1.0
 SQLAlchemy
-psycopg[binary]==3.1.18
-python-dotenv
+psycopg[binary]
 pytest
